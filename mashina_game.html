@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="mashina_game.css">
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r126/three.min.js"></script>
+    <script defer src="mashina_game.js"></script>
+    <title>Poyga game</title>
+</head>
+<body>
+    <div id="score">
+      UP tugmasini bosing</div>
+
+<div id="controls">
+  <div id="buttons">
+    <button id="accelerate">
+      <svg width="30" height="30" viewBox="0 0 10 10">
+        <g transform="rotate(0, 5,5)">
+          <path d="M5,4 L7,6 L3,6 L5,4" />
+        </g>
+      </svg>
+    </button>
+    <button id="decelerate">
+      <svg width="30" height="30" viewBox="0 0 10 10">
+        <g transform="rotate(180, 5,5)">
+          <path d="M5,4 L7,6 L3,6 L5,4" />
+        </g>
+      </svg>
+    </button>
+  </div>
+  <div id="instructions">
+    Boshlash uchun UP tugmasini bosing. Tezlashtirish orqali boshqa transport vositalari bilan to'qnashuvning oldini oling
+    yoki UP va DOWN tugmalari bilan sekinlashtiring.
+  </div>
+</div>
+
+<div id="results">
+  <div class="content">
+    <h1>
+      Siz mashinani urib oldingiz</h1>
+    <p>O'yinni qayta tiklash uchun R tugmasini bosing</p>
+
+    <a id="result-youtube" target="_top" href="https://www.youtube.com/@Dasturchi_admin_uz">
+      <div class="youtube"></div>
+      <span>YouTube’da Menga obuna bo’ling</span>
+    </a>
+
+    <p>
+      Follow
+      <a href="https://www.instagram.com/jasurbek._.o6?igsh=MWpoMmV1dWgyczVyag==" , target="_top">@jasurbek._.o6</a>
+    </p>
+  </div>
+</div>
+
+<a id="youtube-main" class="youtube" target="_top" href="https://www.youtube.com/@Dasturchi_admin_uz">
+  <span>Obuna Bo’ling</span>
+</a>
+<div id="youtube-card">
+  YouTube’da bu o‘yinni yaratishda Three.js-ni o‘rganing
+</div>
+</body>
+</html>
