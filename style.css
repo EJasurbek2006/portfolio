@@ -52,8 +52,7 @@
     justify-content: space-between;
     align-items: center;
     padding: 0 10%;
-    margin-top: 0;
-    margin-bottom: 20px;
+
 }
 
 .home-image{
@@ -70,8 +69,13 @@
 }
 
 .home-image img{
-    position: 380px;
-    max-width: 380px;
+    position: absolute;
+    border: solid 2px black;
+    width: 450px;
+    height: 450px;
+    border-radius: 50%;
+    object-fit: cover;
+    
 }
 .home-content{
     width: 600px;
