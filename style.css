@@ -63,14 +63,15 @@
     
 }
 
+
 .home-image img{
-    position: absolute;
-    border: solid 2px black;
+    /* position: absolute; */  /* <-- O'chirildi */
+    border: solid 2px #fff;     /* <-- qora → oq rangga o'zgartirildi */
     width: 450px;
     height: 450px;
     border-radius: 50%;
     object-fit: cover;
-    
+    /* boshqa hech narsa o'zgarmadi */
 }
 .home-content{
     width: 600px;
