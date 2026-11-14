@@ -40,19 +40,14 @@
     color: #00abf0;
 
 }
-.burger{
-    display: none;
-}
-
 
 .home{
-    height: 110vh;
+    height: 100vh;
     background: linear-gradient(-90deg, #031540 65%, #fff 35%);
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 0 10%;
-
 }
 
 .home-image{
