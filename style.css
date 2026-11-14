@@ -35,6 +35,10 @@
     margin-left: 35px;
     transition: .3s;
 }
+.navbar {
+    margin-left: auto;
+}
+
 .navbar a:hover,
 .navbar a.active{
     color: #00abf0;
