@@ -276,11 +276,12 @@
     font-weight: bold;   /* qalin qilish */
 }
     .home-content h1 {
-        font-size: 40px;
+        font-size: 36px;
     }
     .home-content h3 {
-        font-size: 30px;
+        font-size: 28px;
     }
+}
 }
 @media (max-width: 880px) and (min-width: 841px) {
     .home-image{
