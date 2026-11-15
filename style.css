@@ -491,7 +491,8 @@
 }
 @media(max-width:447px){
     .home{
-        padding: 25px 4% 50px;
+        /* padding: 25px 4% 50px; */
+        padding: 100px 5% 100px;
     }
     .home-image{
         width: min(70vw, 220px);
