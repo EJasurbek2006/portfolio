@@ -153,6 +153,6 @@ body {
 }
 .container .btn:nth-child(9)::before,
 .container .btn:nth-child(9)::after {
-    background: #00ff66;
-    box-shadow: 0 0 5px #00ff66, 0 0 15px #00ff66, 0 0 30px #00ff66, 0 0 60px #00ff66;
+    background: #00ff44;
+    box-shadow: 0 0 5px #00ff44, 0 0 15px #00ff44, 0 0 30px #00ff44, 0 0 60px #00ff44;
 }
