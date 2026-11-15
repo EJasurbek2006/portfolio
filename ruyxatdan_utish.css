@@ -1,0 +1,164 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+:root {
+  --pri: #3b82f6;
+  --sec: #6366f1;
+  --acc: #8b5cf6;
+  --bg-dark: #050b18;
+  --card-bg: rgba(10, 20, 45, 0.6);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background: var(--bg-dark);
+}
+
+/* ⚡ KUCHLI CANVAS FON */
+#bg-canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
+/* ✅ KARTA */
+.login-container {
+  position: relative;
+  z-index: 10;
+  width: 100%;
+  max-width: 410px;
+  padding: 20px;
+}
+
+.login-box {
+  background: var(--card-bg);
+  backdrop-filter: blur(20px);
+  border-radius: 20px;
+  padding: 28px 24px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 
+    0 25px 50px -12px rgba(0, 0, 0, 0.5),
+    0 0 40px rgba(59, 130, 246, 0.05);
+  animation: cardAppear 0.7s ease-out;
+  position: relative;
+  overflow: hidden;
+}
+
+.login-box::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(45deg, transparent, rgba(99, 102, 241, 0.05), transparent);
+  transform: rotate(45deg);
+  animation: shine 8s infinite;
+}
+
+.login-box > * { position: relative; z-index: 2; }
+
+@keyframes cardAppear {
+  from { opacity: 0; transform: translateY(30px) scale(0.9); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+@keyframes shine {
+  0% { transform: rotate(45deg) translateY(-100%); }
+  100% { transform: rotate(45deg) translateY(100%); }
+}
+
+.login-header { text-align: center; margin-bottom: 22px; }
+.login-header h1 { font-size: 24px; font-weight: 700; color: #fff; margin-bottom: 4px; }
+.login-header p { font-size: 13px; color: rgba(255, 255, 255, 0.5); }
+
+/* IJTIMOIY TARMOQLAR */
+.social-login { display: flex; justify-content: center; gap: 12px; margin-bottom: 20px; }
+.social-btn {
+  width: 52px; height: 52px; border-radius: 12px; border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.03); display: flex; align-items: center; justify-content: center;
+  color: #fff; font-size: 22px; text-decoration: none; transition: all 0.3s ease;
+}
+.social-btn:hover { transform: translateY(-4px) scale(1.05); border-color: rgba(255, 255, 255, 0.2); }
+.facebook:hover { background: rgba(66, 103, 178, 0.2); box-shadow: 0 8px 20px rgba(66, 103, 178, 0.3); }
+.google:hover { background: rgba(234, 67, 53, 0.15); box-shadow: 0 8px 20px rgba(234, 67, 53, 0.25); }
+.apple:hover { background: rgba(255, 255, 255, 0.08); box-shadow: 0 8px 20px rgba(255, 255, 255, 0.1); }
+
+/* AJRATUVCHI */
+.divider { display: flex; align-items: center; justify-content: center; margin: 18px 0; }
+.divider::before, .divider::after { content: ''; flex: 1; height: 1px; background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent); }
+.divider span { padding: 0 12px; font-size: 12px; color: rgba(255,255,255,0.35); }
+
+/* TABS */
+.tabs { display: flex; background: rgba(255,255,255,0.03); border-radius: 10px; padding: 3px; margin-bottom: 18px; border: 1px solid rgba(255,255,255,0.05); }
+.tab-btn {
+  flex: 1; padding: 10px; border: none; background: transparent; font-size: 14px; font-weight: 500;
+  color: rgba(255,255,255,0.45); border-radius: 8px; cursor: pointer; transition: all 0.3s ease;
+}
+.tab-btn.active {
+  background: linear-gradient(135deg, var(--pri), var(--sec)); color: #fff;
+  box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);
+}
+.tab-btn:not(.active):hover { color: rgba(255,255,255,0.7); }
+
+/* FORM */
+.form-content { display: none; animation: fadeUp 0.4s ease; }
+.form-content.active { display: block; }
+@keyframes fadeUp { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+
+.input-group { margin-bottom: 14px; }
+.input-wrapper { position: relative; display: flex; align-items: center; }
+.input-wrapper i:first-child { position: absolute; left: 14px; font-size: 18px; color: rgba(255,255,255,0.3); z-index: 1; transition: color 0.3s; }
+.input-wrapper input {
+  width: 100%; padding: 13px 13px 13px 44px; border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 10px; font-size: 14px; color: #fff; background: rgba(255,255,255,0.02);
+  transition: all 0.3s ease; outline: none;
+}
+.input-wrapper input::placeholder { color: rgba(255,255,255,0.2); }
+.input-wrapper input:focus {
+  border-color: rgba(99, 102, 241, 0.5); background: rgba(99, 102, 241, 0.05);
+  box-shadow: 0 0 0 2px rgba(99, 102, 241, 0.1), 0 0 15px rgba(99, 102, 241, 0.08);
+}
+.input-wrapper input:focus + i,
+.input-wrapper input:focus ~ i:first-child { color: #818cf8; }
+
+.eye-btn {
+  position: absolute; right: 10px; background: none; border: none; font-size: 19px;
+  color: rgba(255,255,255,0.3); cursor: pointer; padding: 4px; transition: color 0.2s;
+}
+.eye-btn:hover { color: #fff; }
+
+.form-options { display: flex; justify-content: space-between; align-items: center; margin-bottom: 18px; }
+.remember-me { display: flex; align-items: center; gap: 6px; font-size: 12px; color: rgba(255,255,255,0.5); cursor: pointer; }
+.remember-me input { width: 14px; height: 14px; accent-color: var(--pri); }
+.forgot-link { font-size: 12px; color: #818cf8; text-decoration: none; }
+.forgot-link:hover { text-decoration: underline; }
+
+.submit-btn {
+  width: 100%; display: flex; align-items: center; justify-content: center; gap: 8px;
+  padding: 13px; background: linear-gradient(135deg, var(--pri), var(--sec));
+  border: none; border-radius: 10px; font-size: 15px; font-weight: 600; color: #fff;
+  cursor: pointer; transition: all 0.3s ease; box-shadow: 0 6px 20px rgba(59, 130, 246, 0.3);
+}
+.submit-btn:hover { transform: translateY(-2px); box-shadow: 0 10px 30px rgba(59, 130, 246, 0.4); }
+.submit-btn:active { transform: translateY(0); }
+
+/* MOBIL */
+@media (max-width: 480px) {
+  .login-box { padding: 22px 18px; }
+  .login-header h1 { font-size: 20px; }
+  .social-btn { width: 48px; height: 48px; font-size: 20px; }
+}   

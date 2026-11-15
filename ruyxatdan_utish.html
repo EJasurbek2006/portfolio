@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kirish | Hisobingizga kiring</title>
+    <link rel="stylesheet" href="ruyxatdan_utish.css">
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- ⚡ KUCHLI ANIMATSION FON -->
+    <canvas id="bg-canvas"></canvas>
+
+    <!-- ✅ LOGIN FORMA - ICHKAMLASHGAN -->
+    <div class="login-container">
+        <div class="login-box">
+            <div class="login-header">
+                <h1>Xush kelibsiz!</h1>
+                <p>Hisobingizga kiring va davom eting</p>
+            </div>
+
+            <!-- IJTIMOIY TARMOQLAR -->
+            <div class="social-login">
+                <a href="#" class="social-btn facebook"><i class='bx bxl-facebook'></i></a>
+                <a href="#" class="social-btn google"><i class='bx bxl-google'></i></a>
+                <a href="#" class="social-btn apple"><i class='bx bxl-apple'></i></a>
+            </div>
+
+            <div class="divider"><span>yoki</span></div>
+
+            <!-- TABS -->
+            <div class="tabs">
+                <button class="tab-btn active" data-tab="login">Kirish</button>
+                <button class="tab-btn" data-tab="register">Ro'yxat</button>
+            </div>
+
+            <!-- KIRISH FORMASI -->
+            <form class="form-content active" id="login-form">
+                <div class="input-group">
+                    <div class="input-wrapper">
+                        <i class='bx bx-user'></i>
+                        <input type="text" placeholder="Pochta yoki telefon" required>
+                    </div>
+                </div>
+                <div class="input-group">
+                    <div class="input-wrapper">
+                        <i class='bx bx-lock-alt'></i>
+                        <input type="password" id="pwd-login" placeholder="Parol" required>
+                        <button type="button" class="eye-btn" data-target="pwd-login"><i class='bx bx-hide'></i></button>
+                    </div>
+                </div>
+                <div class="form-options">
+                    <label class="remember-me"><input type="checkbox"> Eslab qol</label>
+                    <a href="#" class="forgot-link">Unutdingizmi?</a>
+                </div>
+                <button type="submit" class="submit-btn">Kirish <i class='bx bx-right-arrow-alt'></i></button>
+            </form>
+
+            <!-- RO'YXATDAN O'TISH FORMASI -->
+            <form class="form-content" id="register-form">
+                <div class="input-group">
+                    <div class="input-wrapper">
+                        <i class='bx bx-user-pin'></i>
+                        <input type="text" placeholder="Ismingiz" required>
+                    </div>
+                </div>
+                <div class="input-group">
+                    <div class="input-wrapper">
+                        <i class='bx bx-envelope'></i>
+                        <input type="email" placeholder="Pochta" required>
+                    </div>
+                </div>
+                <div class="input-group">
+                    <div class="input-wrapper">
+                        <i class='bx bx-lock-alt'></i>
+                        <input type="password" id="pwd-reg" placeholder="Parol" required>
+                        <button type="button" class="eye-btn" data-target="pwd-reg"><i class='bx bx-hide'></i></button>
+                    </div>
+                </div>
+                <div class="input-group">
+                    <div class="input-wrapper">
+                        <i class='bx bx-check-shield'></i>
+                        <input type="password" placeholder="Parolni takrorlang" required>
+                    </div>
+                </div>
+                <label class="remember-me"><input type="checkbox" required> Shartlarni qabul qilaman</label>
+                <button type="submit" class="submit-btn">Ro'yxatdan o'tish <i class='bx bx-right-arrow-alt'></i></button>
+            </form>
+        </div>
+    </div>
+
+    <script src="ruyxatdan_utish.js"></script>
+</body>
+</html>
