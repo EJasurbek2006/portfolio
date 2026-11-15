@@ -79,59 +79,150 @@
 
 
 
+/* Umumiy qism */
 .home-image::before,
-.home-image::after {
+.home-image::after,
+.home-image .ring-trail-1,
+.home-image .ring-trail-2,
+.home-image .ring-trail-3 {
     content: '';
     position: absolute;
     border-radius: 50%;
     border: 5px solid transparent;
+    pointer-events: none;
 }
 
+/* ========== ASOSIY CHIZIQ — faqat o'zi nur sochadi ========== */
 .home-image::before {
     width: 115%;
     height: 115%;
     border-top-color: #00abf0;
     border-right-color: #00abf0;
-
+    
+    /* ✅ Chiziqning o'zidan ikki tomonga nur */
     box-shadow: 
-        /* Tashqi nur */
-        0 -8px 12px -6px #00abf0,
-        8px 0 12px -6px #00abf0,
-        0 -20px 30px -8px rgba(0, 171, 240, 0.5),
-        20px 0 30px -8px rgba(0, 171, 240, 0.4),
-
-        /* Ichki nur */
-        inset 0 8px 12px -6px rgba(0, 171, 240, 0.9),
-        inset -8px 0 12px -6px rgba(0, 171, 240, 0.9),
-        inset 0 20px 30px -8px rgba(0, 171, 240, 0.6),
-        inset -20px 0 30px -8px rgba(0, 171, 240, 0.5);
-
+        0 -1px 0 #00abf0,
+        1px 0 0 #00abf0,
+        0 1px 0 #00abf0,
+        -1px 0 0 #00abf0,
+        0 -4px 8px rgba(0, 171, 240, 0.85),
+        4px 0 8px rgba(0, 171, 240, 0.85),
+        0 4px 8px rgba(0, 171, 240, 0.5),
+        -4px 0 8px rgba(0, 171, 240, 0.5);
+    
     animation: spin1 12s linear infinite;
     opacity: 1;
+    z-index: 2;
 }
 
+/* ========== DUM / ORQA IZ — sekinlashib so'nadi ========== */
+.home-image .ring-trail-1 {
+    width: 115%;
+    height: 115%;
+    border-top-color: rgba(0, 171, 240, 0.5);
+    border-right-color: rgba(0, 171, 240, 0.5);
+    box-shadow: 
+        0 -4px 10px rgba(0, 171, 240, 0.35),
+        4px 0 10px rgba(0, 171, 240, 0.35);
+    animation: spin1 12s linear infinite;
+    animation-delay: -0.3s;
+    opacity: 0.5;
+    z-index: 1;
+}
+
+.home-image .ring-trail-2 {
+    width: 115%;
+    height: 115%;
+    border-top-color: rgba(0, 171, 240, 0.25);
+    border-right-color: rgba(0, 171, 240, 0.25);
+    box-shadow: 
+        0 -4px 10px rgba(0, 171, 240, 0.18),
+        4px 0 10px rgba(0, 171, 240, 0.18);
+    animation: spin1 12s linear infinite;
+    animation-delay: -0.6s;
+    opacity: 0.25;
+    z-index: 1;
+}
+
+.home-image .ring-trail-3 {
+    width: 115%;
+    height: 115%;
+    border-top-color: rgba(0, 171, 240, 0.1);
+    border-right-color: rgba(0, 171, 240, 0.1);
+    box-shadow: 
+        0 -4px 10px rgba(0, 171, 240, 0.08),
+        4px 0 10px rgba(0, 171, 240, 0.08);
+    animation: spin1 12s linear infinite;
+    animation-delay: -0.9s;
+    opacity: 0.1;
+    z-index: 1;
+}
+
+/* ========== TASHQI AYLANA ========== */
 .home-image::after {
     width: 130%;
     height: 130%;
     border-bottom-color: #00abf0;
     border-left-color: #00abf0;
-
+    
     box-shadow: 
-        /* Tashqi nur */
-        0 8px 12px -6px #00abf0,
-        -8px 0 12px -6px #00abf0,
-        0 20px 30px -8px rgba(0, 171, 240, 0.5),
-        -20px 0 30px -8px rgba(0, 171, 240, 0.4),
-
-        /* Ichki nur */
-        inset 0 -8px 12px -6px rgba(0, 171, 240, 0.9),
-        inset 8px 0 12px -6px rgba(0, 171, 240, 0.9),
-        inset 0 -20px 30px -8px rgba(0, 171, 240, 0.6),
-        inset 20px 0 30px -8px rgba(0, 171, 240, 0.5);
-
+        0 1px 0 #00abf0,
+        -1px 0 0 #00abf0,
+        0 -1px 0 #00abf0,
+        1px 0 0 #00abf0,
+        0 4px 8px rgba(0, 171, 240, 0.85),
+        -4px 0 8px rgba(0, 171, 240, 0.85),
+        0 -4px 8px rgba(0, 171, 240, 0.5),
+        4px 0 8px rgba(0, 171, 240, 0.5);
+    
     animation: spin2 8s linear infinite;
     opacity: 1;
+    z-index: 2;
 }
+
+/* Tashqi aylana uchun dum */
+.home-image .ring-trail-ext-1 {
+    width: 130%;
+    height: 130%;
+    border-bottom-color: rgba(0, 171, 240, 0.5);
+    border-left-color: rgba(0, 171, 240, 0.5);
+    box-shadow: 
+        0 4px 10px rgba(0, 171, 240, 0.35),
+        -4px 0 10px rgba(0, 171, 240, 0.35);
+    animation: spin2 8s linear infinite;
+    animation-delay: -0.25s;
+    opacity: 0.5;
+    z-index: 1;
+}
+
+.home-image .ring-trail-ext-2 {
+    width: 130%;
+    height: 130%;
+    border-bottom-color: rgba(0, 171, 240, 0.25);
+    border-left-color: rgba(0, 171, 240, 0.25);
+    box-shadow: 
+        0 4px 10px rgba(0, 171, 240, 0.18),
+        -4px 0 10px rgba(0, 171, 240, 0.18);
+    animation: spin2 8s linear infinite;
+    animation-delay: -0.5s;
+    opacity: 0.25;
+    z-index: 1;
+}
+
+.home-image .ring-trail-ext-3 {
+    width: 130%;
+    height: 130%;
+    border-bottom-color: rgba(0, 171, 240, 0.1);
+    border-left-color: rgba(0, 171, 240, 0.1);
+    box-shadow: 
+        0 4px 10px rgba(0, 171, 240, 0.08),
+        -4px 0 10px rgba(0, 171, 240, 0.08);
+    animation: spin2 8s linear infinite;
+    animation-delay: -0.75s;
+    opacity: 0.1;
+    z-index: 1;
+}
+
 
 
 /* .home-image::before,
