@@ -478,7 +478,7 @@
         height: min(56vw, 216px);
     }
     .home-content h1 {
-        font-size: clamp(24px, 6vw, 30px);
+        font-size: clamp(24px, 6vw, 35px);
     }
     .home-content h3 {
         font-size: clamp(18px, 4vw, 22px);
@@ -491,7 +491,6 @@
 }
 @media(max-width:447px){
     .home{
-        /* padding: 25px 4% 50px; */
         padding: 100px 5% 150px;
     }
     .home-image{
