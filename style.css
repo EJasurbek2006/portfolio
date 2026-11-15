@@ -81,6 +81,9 @@
     position: absolute;
     border-radius: 50%;
     border: 5px solid transparent;
+    /* box-shadow: 0 0 15px #00abf0, 0 0 30px rgba(0, 171, 240, 0.6); /* ✅ yumshoq ko‘k nur sochishi */
+    box-shadow: 0 0 8px #00abf0, 0 0 16px rgba(0, 171, 240, 0.4); /* ✅ juda kuchli bo‘lsa 
+    /* box-shadow: 0 0 20px #00abf0, 0 0 40px rgba(0, 171, 240, 0.8); /* ✅ Yana kuchliroq bo‘lishi uchun */
 }
 .home-image::before{
     width: 115%;
