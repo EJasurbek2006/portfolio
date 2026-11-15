@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shaxsiy Kabinet</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            min-height: 100vh;
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0f172a 100%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .sidebar {
+            width: 340px;
+            background: linear-gradient(180deg, rgba(30, 41, 59, 0.95), rgba(15, 23, 42, 0.98));
+            border-radius: 24px;
+            padding: 35px 25px;
+            box-shadow: 
+                0 20px 60px rgba(0, 0, 0, 0.5),
+                inset 0 1px 0 rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        /* Profil qismi */
+        .profile-section {
+            text-align: center;
+            padding-bottom: 30px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            margin-bottom: 25px;
+        }
+
+        .avatar {
+            width: 90px;
+            height: 90px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 38px;
+            color: white;
+            margin: 0 auto 15px;
+            box-shadow: 0 0 25px rgba(99, 102, 241, 0.4);
+            transition: transform 0.3s ease;
+        }
+
+        .avatar:hover {
+            transform: scale(1.05);
+        }
+
+        .username {
+            font-size: 20px;
+            font-weight: 600;
+            color: #f1f5f9;
+            margin-bottom: 5px;
+        }
+
+        .user-status {
+            font-size: 13px;
+            color: #94a3b8;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+        }
+
+        .status-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: #22c55e;
+            box-shadow: 0 0 8px #22c55e;
+        }
+
+        /* Menyu */
+        .menu-title {
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #64748b;
+            margin: 10px 0 15px 12px;
+        }
+
+        .menu-item {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            padding: 14px 18px;
+            margin-bottom: 8px;
+            border-radius: 12px;
+            color: #cbd5e1;
+            text-decoration: none;
+            font-size: 15px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .menu-item::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 3px;
+            background: linear-gradient(180deg, #3b82f6, #8b5cf6);
+            border-radius: 0 3px 3px 0;
+            transform: scaleY(0);
+            transition: transform 0.3s ease;
+        }
+
+        .menu-item:hover {
+            background: rgba(99, 102, 241, 0.1);
+            color: #e0e7ff;
+            transform: translateX(4px);
+        }
+
+        .menu-item:hover::before {
+            transform: scaleY(1);
+        }
+
+        .menu-item.active {
+            background: rgba(99, 102, 241, 0.15);
+            color: #a5b4fc;
+        }
+
+        .menu-item.active::before {
+            transform: scaleY(1);
+        }
+
+        .menu-icon {
+            font-size: 20px;
+            width: 24px;
+            text-align: center;
+        }
+
+        /* Pastki qism */
+        .bottom-section {
+            margin-top: 25px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .logout {
+            color: #f87171;
+        }
+
+        .logout:hover {
+            background: rgba(239, 68, 68, 0.1);
+            color: #fca5a5;
+        }
+
+        /* Animatsiya */
+        .menu-item {
+            opacity: 0;
+            transform: translateX(-15px);
+            animation: slideIn 0.4s ease forwards;
+        }
+
+        .menu-item:nth-child(2) { animation-delay: 0.05s; }
+        .menu-item:nth-child(3) { animation-delay: 0.1s; }
+        .menu-item:nth-child(4) { animation-delay: 0.15s; }
+        .menu-item:nth-child(5) { animation-delay: 0.2s; }
+        .menu-item:nth-child(6) { animation-delay: 0.25s; }
+        .menu-item:nth-child(7) { animation-delay: 0.3s; }
+
+        @keyframes slideIn {
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        /* Mobil */
+        @media (max-width: 400px) {
+            .sidebar {
+                width: 100%;
+                padding: 25px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="sidebar">
+        <!-- Profil -->
+        <div class="profile-section">
+            <div class="avatar">👤</div>
+            <h2 class="username">Shaxsiy kabinetim</h2>
+            <p class="user-status">
+                <span class="status-dot"></span>
+                Onlayn
+            </p>
+        </div>
+
+        <!-- Asosiy menyu -->
+        <p class="menu-title">Asosiy</p>
+
+        <a href="#" class="menu-item">
+            <span class="menu-icon">📸</span>
+            Mening rasmlarim
+        </a>
+                <!-- <a href="#" class="menu-item active">
+            <span class="menu-icon">🏠</span>
+            Bosh sahifa
+        </a>
+        <a href="#" class="menu-item">
+            <span class="menu-icon">🎮</span>
+            O'yinlarim
+        </a>
+        <a href="#" class="menu-item">
+            <span class="menu-icon">⚙️</span>
+            Sozlamalar
+        </a>
+        <a href="#" class="menu-item">
+            <span class="menu-icon">📊</span>
+            Statistika
+        </a> -->
+
+        <!-- Pastki qism
+        <div class="bottom-section">
+            <a href="#" class="menu-item logout">
+                <span class="menu-icon">🚪</span>
+                Tizimdan chiqish -->
+            </a>
+        </div>
+    </div>
+</body>
+</html>
