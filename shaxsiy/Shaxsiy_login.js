@@ -70,7 +70,7 @@ form.addEventListener('submit', (e) => {
                 // resetForm();
 
                             // ✅ Sahifaga o'tish
-            window.location.href = 'shaxsiy/Shaxsiy_menu.html'; // ← sahifa nomini yozing
+                        window.location.href = 'Shaxsiy_menu.html'; // ← sahifa nomini yozing
             }, 1000);
         } else {
             // ❌ Noto'g'ri Telefon qiling!!!
