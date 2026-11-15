@@ -141,3 +141,18 @@ body {
     background: #00ffff;
     box-shadow: 0 0 5px #00ffff, 0 0 15px #00ffff, 0 0 30px #00ffff, 0 0 60px #00ffff;
 }
+.container .btn:nth-child(7)::before,
+.container .btn:nth-child(7)::after {
+    background: #ff1f71;
+    box-shadow: 0 0 5px #ff1f71, 0 0 15px #ff1f71, 0 0 30px #ff1f71, 0 0 60px #ff1f71;
+}
+.container .btn:nth-child(8)::before,
+.container .btn:nth-child(8)::after {
+    background: #2db2ff;
+    box-shadow: 0 0 5px #2db2ff, 0 0 15px #2db2ff, 0 0 30px #2db2ff, 0 0 60px #2db2ff;
+}
+.container .btn:nth-child(9)::before,
+.container .btn:nth-child(9)::after {
+    background: #1eff45;
+    box-shadow: 0 0 5px #1eff45, 0 0 15px #1eff45, 0 0 30px #1eff45, 0 0 60px #1eff45;
+}
