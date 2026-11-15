@@ -388,7 +388,7 @@
         height: auto;
         min-height: 100vh;
         background: linear-gradient(-90deg, #031540 50%, #fff 50%);
-        padding: 40px 5% 60px;
+        padding: 100px 5% 100px;
     }
     .home-image{
         margin: 0 auto 30px;
