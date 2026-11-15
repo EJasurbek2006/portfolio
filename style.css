@@ -275,7 +275,12 @@
     cursor: pointer;
     font-weight: bold;   /* qalin qilish */
 }
-
+    .home-content h1 {
+        font-size: 40px;
+    }
+    .home-content h3 {
+        font-size: 30px;
+    }
 }
 @media (max-width: 880px) and (min-width: 841px) {
     .home-image{
