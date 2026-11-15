@@ -80,7 +80,7 @@
     content: '';
     position: absolute;
     border-radius: 50%;
-    border: 3px solid transparent;
+    border: 5px solid transparent;
 }
 .home-image::before{
     width: 115%;
