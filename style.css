@@ -345,6 +345,9 @@
     .home-content h3 {
         font-size: 25px;
     }
+        .home-content p {
+        font-size: 13px;
+    }
 }
 @media (max-width: 757px) and (min-width: 670px) {
     .home-content h1 {
@@ -352,6 +355,9 @@
     }
     .home-content h3 {
         font-size: 25px;
+    }
+        .home-content p {
+        font-size: 12px;
     }
 }
 
@@ -373,7 +379,7 @@
         font-size: 22px;
     }
         .home-content p {
-        font-size: 18px;
+        font-size: 12px;
     }
 }
 @media(max-width:670px){
