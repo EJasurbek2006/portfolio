@@ -176,13 +176,11 @@
 <script>
     const mainImage = document.getElementById('mainImage');
     const thumbContainer = document.getElementById('thumbContainer');
-
     function triggerMainAnimation() {
         mainImage.classList.remove('fade-animate');
         void mainImage.offsetWidth;
         mainImage.classList.add('fade-animate');
     }
-
     thumbContainer.addEventListener('click', e => {
         const card = e.target.closest('.thumb-card');
         if (!card) return;
@@ -190,9 +188,10 @@
         const newSrc = card.getAttribute('data-src');
         if (!newSrc || mainImage.src.includes(newSrc)) return;
         
-        mainImage.src = newSrc;
+        mainImage.src = "../rasmim/" + newSrc;
         triggerMainAnimation();
     });
 </script>
+    
 </body>
 </html>
