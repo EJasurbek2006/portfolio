@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tasdiqlash | Kodni kiriting</title>
+    <link rel="stylesheet" href="Shaxsiy_login.css">
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Fon effekti -->
+    <div class="bg-gradient"></div>
+    <div class="particles">
+        <span></span><span></span><span></span><span></span><span></span>
+        <span></span><span></span><span></span><span></span><span></span>
+    </div>
+
+    <!-- Asosiy quti -->
+    <div class="verify-container">
+        <div class="verify-card">
+            <!-- Ikonka -->
+            <div class="icon-wrapper">
+                <i class='bx bx-lock-alt'></i>
+            </div>
+
+            <h1>Kodni kiriting</h1>
+            <p>Agar mening shaxsiy kabinetimga kirmoqchi bo‘lsangiz unda +998 95 002 32 92 raqamiga telefon qilib kodni so‘rash orqali kirishingz mumkin☻</p>
+
+            <!-- Kod kiritish maydoni -->
+            <form class="code-form" id="codeForm">
+                <div class="code-inputs">
+                    <input type="text" maxlength="1" class="code-input" inputmode="numeric" pattern="[0-9]" autofocus>
+                    <input type="text" maxlength="1" class="code-input" inputmode="numeric" pattern="[0-9]">
+                    <input type="text" maxlength="1" class="code-input" inputmode="numeric" pattern="[0-9]">
+                    <input type="text" maxlength="1" class="code-input" inputmode="numeric" pattern="[0-9]">
+                </div>
+
+                <button type="submit" class="submit-btn" id="submitBtn">
+                    <span>Kirish</span>
+                    <i class='bx bx-right-arrow-alt'></i>
+                </button>
+            </form>
+
+            <div class="resend">
+                <span>Kod kelmadimi?</span>
+                <button type="button" class="resend-btn" id="resendBtn">Qayta yuborish</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="Shaxsiy_login.js"></script>
+</body>
+</html>

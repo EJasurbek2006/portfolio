@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Suratlar Galereyasi</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', sans-serif;
+        }
+        body {
+            min-height: 100vh;
+            background: #0f172a;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+        }
+        .container {
+            max-width: 1400px;
+            width: 100%;
+            display: flex;
+            gap: 25px;
+            align-items: flex-start;
+        }
+
+        /* Chap katta rasm */
+        .main-section {
+            flex: 1.4;
+            border-radius: 18px;
+            overflow: hidden;
+            box-shadow: 0 8px 35px rgba(0,0,0,0.4);
+            background: #1e293b;
+        }
+        .main-image-wrapper {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            min-height:870px;
+        }
+        .main-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        .main-img.fade-animate {
+            animation: mainFadeIn 0.5s ease-out forwards;
+        }
+        @keyframes mainFadeIn {
+            0% { opacity: 0; transform: scale(1.05); }
+            100% { opacity: 1; transform: scale(1); }
+        }
+        .label {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            padding: 15px;
+            background: linear-gradient(transparent, rgba(0,0,0,0.6));
+            color: white;
+            font-size: 14px;
+            text-align: center;
+        }
+
+        /* O'ng kichik rasmlar */
+        .thumb-section {
+            flex: 1;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-auto-rows: 135px;
+            gap: 12px;
+        }
+        .thumb-card {
+            border-radius: 12px;
+            overflow: hidden;
+            cursor: pointer;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.35);
+            transition: all 0.3s ease;
+        }
+        .thumb-card:hover {
+            transform: translateY(-3px);
+        }
+        .thumb-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+        .thumb-card:hover .thumb-img {
+            transform: scale(1.05);
+        }
+
+        /* Mobil moslashuv */
+        @media (max-width: 900px) {
+            .container {
+                flex-direction: column;
+                align-items: center;
+            }
+            .main-section {
+                width: 100%;
+                max-width: 550px;
+            }
+            .main-image-wrapper {
+                min-height: 400px;
+            }
+            .thumb-section {
+                max-width: 550px;
+                width: 100%;
+            }
+        }
+        @media (max-width: 520px) {
+            .thumb-section {
+                grid-template-columns: 1fr;
+                max-width: 280px;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <!-- Chap katta rasm -->
+    <div class="main-section">
+        <div class="main-image-wrapper">
+            <img src="12.jpg" alt="Asosiy rasm" class="main-img" id="mainImage">
+            <div class="label">Eliyev Jasurbek</div>
+        </div>
+    </div>
+
+    <!-- O'ng kichik rasmlar -->
+    <div class="thumb-section" id="thumbContainer">
+        <div class="thumb-card" data-src="13.jpg">
+            <img src="13.jpg" alt="Rasm" class="thumb-img">
+        </div>
+        <div class="thumb-card" data-src="1.jpg">
+            <img src="1.jpg" alt="Rasm" class="thumb-img">
+        </div>
+        <div class="thumb-card" data-src="2.jpg">
+            <img src="2.jpg" alt="Rasm" class="thumb-img">
+        </div>
+        <div class="thumb-card" data-src="3.jpg">
+            <img src="3.jpg" alt="Rasm" class="thumb-img">
+        </div>
+        <div class="thumb-card" data-src="4.jpg">
+            <img src="4.jpg" alt="Rasm" class="thumb-img">
+        </div>
+        <div class="thumb-card" data-src="5.jpg">
+            <img src="5.jpg" alt="Rasm" class="thumb-img">
+        </div>
+        <div class="thumb-card" data-src="6.jpg">
+            <img src="6.jpg" alt="Rasm" class="thumb-img">
+        </div>
+        <div class="thumb-card" data-src="7.jpg">
+            <img src="7.jpg" alt="Rasm" class="thumb-img">
+        </div>
+        <div class="thumb-card" data-src="8.jpg">
+            <img src="8.jpg" alt="Rasm" class="thumb-img">
+        </div>
+        <div class="thumb-card" data-src="9.jpg">
+            <img src="9.jpg" alt="Rasm" class="thumb-img">
+        </div>
+        <div class="thumb-card" data-src="10.jpg">
+            <img src="10.jpg" alt="Rasm" class="thumb-img">
+        </div>
+        <div class="thumb-card" data-src="11.jpg">
+            <img src="11.jpg" alt="Rasm" class="thumb-img">
+        </div>
+    </div>
+</div>
+
+<script>
+    const mainImage = document.getElementById('mainImage');
+    const thumbContainer = document.getElementById('thumbContainer');
+
+    function triggerMainAnimation() {
+        mainImage.classList.remove('fade-animate');
+        void mainImage.offsetWidth;
+        mainImage.classList.add('fade-animate');
+    }
+
+    thumbContainer.addEventListener('click', e => {
+        const card = e.target.closest('.thumb-card');
+        if (!card) return;
+        
+        const newSrc = card.getAttribute('data-src');
+        if (!newSrc || mainImage.src.includes(newSrc)) return;
+        
+        mainImage.src = newSrc;
+        triggerMainAnimation();
+    });
+</script>
+</body>
+</html>
