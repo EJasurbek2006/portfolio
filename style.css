@@ -76,41 +76,47 @@
     z-index: 1;
 }
 
-/* Umumiy qism — SHADOW BU YERDA BO'LMASIN! */
+/* Umumiy qism */
 .home-image::before,
-.home-image::after{
+.home-image::after {
     content: '';
     position: absolute;
     border-radius: 50%;
     border: 5px solid transparent;
 }
 
-/* Ichki aylana — faqat tepa va o'ng tomondan nur */
-.home-image::before{
+/* Ichki aylana — tepa + o'ng chiziq nur sochadi */
+.home-image::before {
     width: 115%;
     height: 115%;
     border-top-color: #00abf0;
     border-right-color: #00abf0;
+    
+    /* ✅ Faqat chiziq atrofida nur — butun aylanaga emas */
     box-shadow: 
-        0 -5px 15px #00abf0,
-        5px 0 15px #00abf0,
-        0 -15px 30px rgba(0, 171, 240, 0.7),
-        15px 0 30px rgba(0, 171, 240, 0.5);
+        0 -8px 12px -6px #00abf0,
+        8px 0 12px -6px #00abf0,
+        0 -20px 30px -8px rgba(0, 171, 240, 0.5),
+        20px 0 30px -8px rgba(0, 171, 240, 0.4);
+    
     animation: spin1 12s linear infinite;
     opacity: 1;
 }
 
-/* Tashqi aylana — faqat past va chap tomondan nur */
-.home-image::after{
+/* Tashqi aylana — past + chap chiziq nur sochadi */
+.home-image::after {
     width: 130%;
     height: 130%;
     border-bottom-color: #00abf0;
     border-left-color: #00abf0;
+    
+    /* ✅ Faqat chiziq atrofida nur — butun aylanaga emas */
     box-shadow: 
-        0 5px 15px #00abf0,
-        -5px 0 15px #00abf0,
-        0 15px 30px rgba(0, 171, 240, 0.7),
-        -15px 0 30px rgba(0, 171, 240, 0.5);
+        0 8px 12px -6px #00abf0,
+        -8px 0 12px -6px #00abf0,
+        0 20px 30px -8px rgba(0, 171, 240, 0.5),
+        -20px 0 30px -8px rgba(0, 171, 240, 0.4);
+    
     animation: spin2 8s linear infinite;
     opacity: 1;
 }
