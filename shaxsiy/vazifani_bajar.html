@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vazifalarim | Zamonaviy Rejalashtiruvchi</title>
+    <link rel="stylesheet" href="vazifani_bajar.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Orqa fon animatsiyasi -->
+        <div class="bg-blur-circle circle-1"></div>
+        <div class="bg-blur-circle circle-2"></div>
+
+        <!-- Bosh qism -->
+        <header class="header">
+            <h1 class="main-title">
+                <i class="fas fa-check-circle"></i> Vazifalarim
+            </h1>
+            <p class="subtitle">Kun tartibingizni tartibga soling</p>
+            
+            <!-- Statistika -->
+            <div class="stats-row">
+                <div class="stat-card">
+                    <div class="stat-number" id="totalCount">0</div>
+                    <div class="stat-label">Jami</div>
+                </div>
+                <div class="stat-card done-card">
+                    <div class="stat-number" id="doneCount">0</div>
+                    <div class="stat-label">Bajarilgan</div>
+                </div>
+                <div class="stat-card pending-card">
+                    <div class="stat-number" id="pendingCount">0</div>
+                    <div class="stat-label">Jarayonda</div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Vazifa qo'shish maydoni -->
+        <section class="add-task-section">
+            <form id="taskForm" class="task-form">
+                <div class="input-row">
+                    <input type="text" id="taskText" placeholder="Yangi vazifani kiriting..." required class="text-input">
+                    <input type="date" id="taskDate" required class="date-input">
+                    <input type="time" id="taskTime" required class="time-input">
+                    <select id="taskPriority" class="priority-select">
+                        <option value="low">Oddiy</option>
+                        <option value="medium" selected>O'rtacha</option>
+                        <option value="high">Muhim</option>
+                    </select>
+                    <button type="submit" class="add-btn">
+                        <i class="fas fa-plus"></i> Qo'shish
+                    </button>
+                </div>
+            </form>
+        </section>
+
+        <!-- Filtr tugmalari -->
+        <section class="filters">
+            <button class="filter-btn active" data-filter="all">Hammasi</button>
+            <button class="filter-btn" data-filter="pending">Jarayonda</button>
+            <button class="filter-btn" data-filter="done">Bajarilgan</button>
+        </section>
+
+        <!-- Vazifalar ro'yxati -->
+        <section class="task-list-section">
+            <ul id="taskList" class="task-list"></ul>
+            <div id="emptyState" class="empty-state">
+                <i class="fas fa-clipboard-list"></i>
+                <h3>Vazifalar mavjud emas</h3>
+                <p>Yangi vazifa qo'shish orqali boshlang</p>
+            </div>
+        </section>
+
+        <!-- Pastki qism -->
+        <footer class="footer">
+            <button id="clearDoneBtn" class="clear-btn">
+                <i class="fas fa-trash-alt"></i> Bajarilganlarni tozalash
+            </button>
+        </footer>
+
+        <!-- Motivatsion oyna -->
+        <div id="motivationModal" class="modal-overlay">
+            <div class="modal-box">
+                <div class="modal-icon">🎉</div>
+                <h2>Ajoyib!</h2>
+                <p id="motiText"></p>
+                <button onclick="closeMotiModal()" class="modal-btn">Davom etish</button>
+            </div>
+        </div>
+
+        <!-- Ogohlantirish oynasi -->
+        <div id="alertModal" class="modal-overlay">
+            <div class="modal-box">
+                <div class="modal-icon">⏰</div>
+                <h2>Vaqt yetdi!</h2>
+                <p id="alertText"></p>
+                <button onclick="closeAlertModal()" class="modal-btn">Tushunarli</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="vazifani_bajar.js"></script>
+</body>
+</html>
